@@ -1,0 +1,7 @@
+#!/bin/sh
+# Synthetic process fixture: never invokes CopyQ or touches the clipboard.
+case "$4" in
+  slow) exec sleep 5 ;;
+  failure) printf '%s\n' 'synthetic failure' >&2; exit 7 ;;
+  *) printf '%s\n' '["  中文\r\nbody\n","${1:literal}"]' ;;
+esac

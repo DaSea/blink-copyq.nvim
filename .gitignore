@@ -1,0 +1,5 @@
+.memsearch/
+nvim.log
+
+# test/runtime artifacts
+*.log
