@@ -21,17 +21,14 @@
 
 ## 安装：lazy.nvim
 
-目前可直接使用本地目录，**配置写在 blink.cmp 的 opts 中**，而不是本插件的 opts：
+**配置写在 blink.cmp 的 opts 中**，而不是本插件的 opts：
 
 ```lua
 {
   'Saghen/blink.cmp',
   version = '1.*',
   dependencies = {
-    {
-      dir = '/absolute/path/to/blink-copyq.nvim', -- 改为此项目的绝对路径
-      name = 'blink-copyq.nvim',
-    },
+    'DaSea/blink-copyq.nvim',
   },
   opts = {
     sources = {
@@ -61,7 +58,7 @@
 }
 ```
 
-已有 blink 配置时，将 `copyq` 添加到你的 source 列表并合并 provider/keymap 即可，不必重复声明 blink。发布到 GitHub 后，可将 `dir` 依赖替换为实际的 `owner/blink-copyq.nvim`。
+已有 blink 配置时，将 `copyq` 添加到你的 source 列表并合并 provider/keymap 即可，不必重复声明 blink。本地开发时也可以把依赖换成 `{ dir = '/path/to/blink-copyq.nvim', name = 'blink-copyq.nvim' }`。
 
 本插件没有 `setup()`，不需要额外全局变量或 `vim.b` 手动标记。
 
